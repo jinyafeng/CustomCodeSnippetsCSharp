@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>IService</Title>
+			<Shortcut>IService</Shortcut>
+			<Description>Code snippet for a service interface.</Description>
+			<Author>jinyafeng</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>Entity</ID>
+					<ToolTip>entity upper</ToolTip>
+					<Default>Entity</Default>
+				</Literal>
+				<Literal>
+					<ID>entity</ID>
+					<ToolTip>entity lower</ToolTip>
+					<Default>entity</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="csharp"><![CDATA[public interface I$Entity$Services :IBaseServices<$Entity$>
+    {
+		int Sum(int i, int j);
+
+		int Add($Entity$ $entity$);
+
+		bool Delete($Entity$ $entity$);
+
+		bool Update($Entity$ $entity$);
+
+		List<$Entity$> Query(Expression<Func<$Entity$, bool>> whereExpression);
+    }$end$]]>
+			</Code>
+			<Imports> 
+				<Import>
+				<Namespace>Blog.Core.IServices.BASE</Namespace>
+				</Import>
+				<Import>
+				<Namespace>Blog.Core.Model.Models</Namespace>
+				</Import>
+				<Import>
+				<Namespace>System</Namespace>
+				</Import>
+				<Import>
+				<Namespace>System.Collections.Generic</Namespace>
+				</Import>
+				<Import>
+				<Namespace>System.Linq.Expressions</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

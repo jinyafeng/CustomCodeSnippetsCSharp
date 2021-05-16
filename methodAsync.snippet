@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>methodAsync</Title> <!-- 标题，必须的。-->
+			<Shortcut>methodAsync</Shortcut> <!-- ***快捷键名称，是在VS里输入的，重要！-->
+			<Description>Code snippet for an async method</Description><!-- 描述，可选，不重要 -->
+			<Author>jinyafeng</Author> <!--作者，可选，不重要。 -->
+			<SnippetTypes> <!--片段类型，可选，不重要。 -->
+				<SnippetType>Expansion</SnippetType> <!--代表基本类型，代码片段直接插入光标处，还有其他类型，如SurroundsWith，会把你选择的代码片段包进去，不好用不推荐。-->
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations> <!--可以定义多个变量。-->
+				<Literal> <!--单个变量的定义-->
+					<ID>accessbility</ID> <!--***变量名称，重要！-->
+					<ToolTip>Accessbility</ToolTip> <!--提示，可选，不重要-->
+					<Default>public</Default><!--默认的文本值，可选，但有用。-->
+				</Literal>
+				<Literal>
+					<ID>return</ID>
+					<ToolTip>Return Type</ToolTip>
+					<Default>int</Default>
+				</Literal>
+				<Literal>
+					<ID>method</ID>
+					<ToolTip>Method name</ToolTip>
+					<Default>MyMethod</Default>
+				</Literal>
+				<Literal>
+					<ID>parameter</ID>
+					<ToolTip>Parameter name</ToolTip>
+					<Default></Default>
+				</Literal>
+			</Declarations>
+			<!--***核心定义阶段，其中 <![CDATA[]]> 是固定的格式。无需关心，真正关心的是里面的[]的内容，为变量+文本，而变量用双$$表示。-->
+			<!-- Language 选择对应的语言，目前支持 VB,CSharp,CPP,XAML,XML,JavaScript,TypeScript,SQL,HTML-->
+			<!--$end$ 是一个特殊变量，代表着按回车键 回到的地方，以继续写代码。-->
+			<Code Language="csharp"><![CDATA[$accessbility$ async Task<$return$> $method$Async($parameter$)
+			{
+				$end$
+			}
+		]]>
+			</Code>
+			<Imports> <!--要导入的命名空间列表。可选。-->
+				<Import> <!--单个命名空间导入定义,如果当前文件已经导入，则不会重新导入。-->
+				<Namespace>System.Threading.Tasks</Namespace>
+				</Import>
+			</Imports>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
